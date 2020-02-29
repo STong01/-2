@@ -1,0 +1,13 @@
+﻿生成启动时间为 2020/2/29 19:40:20。
+     1>项目“C:\Users\Administrator\Desktop\-2\C+.0229\C+.0229\C+.0229.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         E:\S文件\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "合法括号序列判断.cpp"
+         合法括号序列判断.cpp
+       Link:
+         E:\S文件\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Administrator\Desktop\-2\C+.0229\Debug\C+.0229.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Administrator\Desktop\-2\C+.0229\Debug\C+.0229.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Administrator\Desktop\-2\C+.0229\Debug\C+.0229.lib" /MACHINE:X86 "Debug\合法括号序列判断.obj"
+         C+.0229.vcxproj -> C:\Users\Administrator\Desktop\-2\C+.0229\Debug\C+.0229.exe
+     1>已完成生成项目“C:\Users\Administrator\Desktop\-2\C+.0229\C+.0229\C+.0229.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.73
