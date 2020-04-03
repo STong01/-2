@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
+#include <map>
 using namespace std;
 
 int main()
@@ -16,11 +16,12 @@ int main()
 		}
 
 		int len = cur.size();
-		vector<int>tmp = { 0 };
+		map<int, int>tmp;
 
 		int count = 1;
 		int sum = 1;
-		int num = 1;
+		//int num = 0;
+
 		for (int i = 0; i < len; i++)
 		{
 			if (cur[i] == sum)
@@ -31,22 +32,27 @@ int main()
 			}
 			else
 			{
-				tmp.push_back(cur[i]);
-				sort(tmp.begin(), tmp.end());
-				if (tmp[num] == sum)
+				tmp[cur[i]] = cur[i];
+
+				if (tmp[sum] == sum)
 				{
-					cout << tmp[num] << " " << count << endl;
+					cout << sum << " " << count << endl;
 					sum++;
-					num++;
+					//num++;
 				}
 			}
-			while ((tmp[num] == sum) && num < tmp.size())
+			while (tmp[sum] == sum)
 			{
-				cout << tmp[num] << " " << count << endl;
+				cout << tmp[sum] << " " << count << endl;
 				sum++;
-				num++;
+				//num++;
+				if (sum == tmp.size() + 1)
+				{
+					break;
+				}
 			}
 		}
+
 	}
 
 	system("pause");
