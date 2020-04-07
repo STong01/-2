@@ -26,5 +26,6 @@ int main()
 		}
 		cout << maxSize << endl;
 	}
+	system("pause");
 	return 0;
 }
