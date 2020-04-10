@@ -4,7 +4,7 @@
 #include<math.h>
 using namespace std;
 
-int main()
+int main1()
 {
 	//根据题中给出的例子，这个字符串只包含小写字母，不然答案就不应该是56了
 	string s1, s2;
