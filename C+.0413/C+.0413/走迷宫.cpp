@@ -43,7 +43,7 @@ int Findload(int x, int y)
 	}
 }
 
-int main()
+int main1()
 {
 	char s;
 	while (cin >> s)
