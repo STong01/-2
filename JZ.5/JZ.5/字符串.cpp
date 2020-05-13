@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int _tmain(int argc, char* argv[])
+int main1(int argc, char* argv[])
 {
 	char str1[] = "hello world";
 	char str2[] = "hello world";
@@ -26,12 +26,6 @@ int _tmain(int argc, char* argv[])
 	{
 		printf("str3 and str4 are not same.\n");
 	}
-	return 0;
-}
-
-int main()
-{
-
 
 	system("pause");
 	return 0;
