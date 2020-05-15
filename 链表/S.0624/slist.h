@@ -16,12 +16,14 @@
 #include <assert.h>
 
 typedef int SLTDataType; 
-typedef struct SListNode {
+typedef struct SListNode 
+{
 	SLTDataType _data;   
 	struct SListNode* _next; 
 }SListNode;
 
-typedef struct SList {
+typedef struct SList 
+{
 	SListNode* _head;
 }SList;
 

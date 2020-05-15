@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void SListInit(SList* plist){
+void SListInit(SList* plist)
+{
 	assert(plist);
 
 	plist->_head = NULL;
