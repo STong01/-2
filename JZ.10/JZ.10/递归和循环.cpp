@@ -18,7 +18,7 @@ int AddFrom1ToN_Iterative(int n)
 	return result;
 }
 
-int main()
+int main1()
 {
 	int n;
 	while (cin >> n)
