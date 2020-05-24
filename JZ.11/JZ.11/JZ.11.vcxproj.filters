@@ -18,5 +18,8 @@
     <ClCompile Include="快速排序.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="年龄排序.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

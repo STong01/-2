@@ -18,18 +18,18 @@ int Partition(int data[], int length, int start, int end)
 	}
 
 	//生成start与end之间的随机数
-	int index = RandomInRange(start, end);
-	Swap(&data[index], &data[end]);
+	//int index = RandomInRange(start, end);
+	//Swap(&data[index], &data[end]);
 
 	int small = start - 1;
-	for (index = start; index < end; index++)
+	//for (index = start; index < end; index++)
 	{
-		if (data[index] < data[end])
+		//if (data[index] < data[end])
 		{
 			++small;
-			if (small != index)
+			//if (small != index)
 			{
-				Swap(&data[index], &data[small]);
+			//	Swap(&data[index], &data[small]);
 			}
 		}
 
@@ -59,7 +59,7 @@ void QuickSort(int data[], int length, int start, int end)
 	}
 }
 
-int main()
+int main1()
 {
 
 	system("pause");
