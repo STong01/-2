@@ -37,7 +37,7 @@ void SortAges(int ages[], int length)
 	}
 }
 
-int main()
+int main2()
 {
 
 	int ages[] = { 12, 13, 46, 43, 12, 23, 56, 87, 66, 55, 98, 67 };

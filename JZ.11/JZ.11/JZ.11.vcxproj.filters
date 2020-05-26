@@ -21,5 +21,8 @@
     <ClCompile Include="年龄排序.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="旋转数组的最小数字.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

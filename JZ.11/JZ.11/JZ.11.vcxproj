@@ -66,6 +66,7 @@
   <ItemGroup>
     <ClCompile Include="年龄排序.cpp" />
     <ClCompile Include="快速排序.cpp" />
+    <ClCompile Include="旋转数组的最小数字.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
