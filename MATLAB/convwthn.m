@@ -1,5 +1,5 @@
-function[y,ny] = convwthn(x,nx,h,nh)
-y = conv(x,h)
-ny1 = nx(1)+nh(1);
-ny2 = nx(end)+nh(end);
-ny = [ny1:ny2];
+function[h,nh] = convwthn(x,nx,y,ny)
+h = conv(x,y);
+nh1 = nx(1)+ny(1);
+nh2 = nx(end)+ny(end);
+nh = [nh1:nh2];

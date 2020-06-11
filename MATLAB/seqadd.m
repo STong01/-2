@@ -1,7 +1,7 @@
-function [y,n] = seqadd(x1,n1,x2,n2)
-n = min(min(n1),min(n2)):max(max(n1),max(n2));
-y1 = zeros(1,length(n));
+function [h,nh] = seqadd(x,nx,y,ny)
+nh = min(min(nx),min(ny)):max(max(nx),max(ny));
+y1 = zeros(1,length(nh));
 y2 = y1;
-y1((n>=min(n1))&(n<=max(n1))==1)=x1;
-y2((n>=min(n2))&(n<=max(n2))==1)=x2;
-y = y1 + y2;
+y1((nh>=min(nx))&(nh<=max(nx))==1)=x;
+y2((nh>=min(ny))&(nh<=max(ny))==1)=y;
+h = y1 + y2;

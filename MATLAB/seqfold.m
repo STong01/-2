@@ -1,3 +1,3 @@
-function [y,ny] = seqfold(x,nx)
-y = fliplr(x);
-ny = -fliplr(nx);
+function [h,nh] = seqfold(x,nx)
+h = fliplr(x);
+nh = -fliplr(nx);
