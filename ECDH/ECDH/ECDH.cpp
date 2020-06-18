@@ -2,9 +2,28 @@
 #include <vector>
 using namespace std;
 
-int Modular_operation(double n, double m)
+//分母求模逆
+int power(int x, int y, int mod)
 {
-	return 0;
+	int r = 1;
+	while (y)
+	{
+		if (y & 1)
+		{
+			r = (r * x) % mod;
+		}
+		x = (x * x) % mod;
+		y >>= 1;
+	}
+	return r;
+}
+
+//分数求模运算
+int Modular_operation(int x, int y, int mod)
+{
+	int p = power(y, mod - 2, mod);
+	int ans = x * p % mod;
+	return ans;
 }
 
 vector<int> test(int N, vector<int>Sp0)
@@ -24,8 +43,11 @@ vector<int> test(int N, vector<int>Sp0)
 
 int main()
 {
-	double p = 23 / 3;
-	cout << p << endl;
+	int x = 14;
+	int y = 3;
+	int mod = 23;
+
+	cout << Modular_operation(x, y, mod) << endl;
 
 
 	system("pause");
