@@ -71,69 +71,71 @@ vector<int> test(int N, int a, int p, vector<int>Sp0)
 
 int main()
 {
-	int p;
-	cout << "请输入p值：";
-	cin >> p;
-	cout << endl;
+	//int p;
+	//cout << "请输入p值：";
+	//cin >> p;
+	//cout << endl;
 
-	int a, b;
-	cout << "请输入椭圆曲线a,b的值：";
-	cin >> a >> b;
-	if (a == 0 && b != 0)
-	{
-		cout << "椭圆方程为：";
-		cout << "y^2 = x^3 + (" << b << ")" << endl;
-		cout << endl;
-	}
-	if (a != 0 && b == 0)
-	{
-		cout << "椭圆方程为：";
-		cout << "y^2 = x^3 + (" << a << ")x^2" << endl;
-		cout << endl;
-	}
-	if (a == 0 && b == 0)
-	{
-		cout << "椭圆方程为：";
-		cout << "y^2 = x^3 "<< endl;
-		cout << endl;
-	}
-	if (a != 0 && b != 0)
-	{
-		cout << "椭圆方程为：";
-		cout << "y^2 = x^3 + (" << a << ")x^2 + (" << b << ")" << endl;
-		cout << endl;
-	}
+	//int a, b;
+	//cout << "请输入椭圆曲线a,b的值：";
+	//cin >> a >> b;
+	//if (a == 0 && b != 0)
+	//{
+	//	cout << "椭圆方程为：";
+	//	cout << "y^2 = x^3 + (" << b << ")" << endl;
+	//	cout << endl;
+	//}
+	//if (a != 0 && b == 0)
+	//{
+	//	cout << "椭圆方程为：";
+	//	cout << "y^2 = x^3 + (" << a << ")x^2" << endl;
+	//	cout << endl;
+	//}
+	//if (a == 0 && b == 0)
+	//{
+	//	cout << "椭圆方程为：";
+	//	cout << "y^2 = x^3 "<< endl;
+	//	cout << endl;
+	//}
+	//if (a != 0 && b != 0)
+	//{
+	//	cout << "椭圆方程为：";
+	//	cout << "y^2 = x^3 + (" << a << ")x^2 + (" << b << ")" << endl;
+	//	cout << endl;
+	//}
 
-	vector<int>G = { 0, 0 };
-	cout << "请输入基点G坐标(x1, y1)：";
-	cin >> G[0] >> G[1];
-	cout << endl;
+	//vector<int>G = { 0, 0 };
+	//cout << "请输入基点G坐标(x1, y1)：";
+	//cin >> G[0] >> G[1];
+	//cout << endl;
 
-	int Na = 0;
-	cout << "请输入A的私钥：";
-	cin >> Na;
+	//int Na = 0;
+	//cout << "请输入A的私钥：";
+	//cin >> Na;
 
-	vector<int>Pa = { 0, 0 };
-	Pa = test(Na, a, p, G);
-	cout << "用户A的公钥：(" << Pa[0] << "," << Pa[1] << ")" << endl;
-	cout << endl;
+	//vector<int>Pa = { 0, 0 };
+	//Pa = test(Na, a, p, G);
+	//cout << "用户A的公钥：(" << Pa[0] << "," << Pa[1] << ")" << endl;
+	//cout << endl;
 
-	int Nb = 0;
-	cout << "请输入B的私钥：";
-	cin >> Nb;
+	//int Nb = 0;
+	//cout << "请输入B的私钥：";
+	//cin >> Nb;
 
-	vector<int>Pb = { 0, 0 };
-	Pb = test(Nb, a, p, G);
-	cout << "用户B的公钥：(" << Pb[0] << "," << Pb[1] << ")" << endl;
-	cout << endl;
+	//vector<int>Pb = { 0, 0 };
+	//Pb = test(Nb, a, p, G);
+	//cout << "用户B的公钥：(" << Pb[0] << "," << Pb[1] << ")" << endl;
+	//cout << endl;
 
-	vector<int>Ka = { 0, 0 };
-	Ka = test(Na, a, p, Pb);
-	cout << "用户A产生秘密钥：(" << Ka[0] << "," << Ka[1] << ")" << endl;
+	//vector<int>Ka = { 0, 0 };
+	//Ka = test(Na, a, p, Pb);
+	//cout << "用户A产生秘密钥：(" << Ka[0] << "," << Ka[1] << ")" << endl;
 
-	vector<int>Kb = { 0, 0 };
-	Kb = test(Nb, a, p, Pa);
-	cout << "用户B产生秘密钥：(" << Kb[0] << "," << Kb[1] << ")" << endl;
+	//vector<int>Kb = { 0, 0 };
+	//Kb = test(Nb, a, p, Pa);
+	//cout << "用户B产生秘密钥：(" << Kb[0] << "," << Kb[1] << ")" << endl;
+
+	cout << Modular_operation(119, 2, 23) << endl;
 
 	system("pause");
 	return 0;
