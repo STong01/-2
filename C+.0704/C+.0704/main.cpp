@@ -8,71 +8,82 @@ typedef struct node
 	struct node *next;
 }node, *linklist;
 
-linklist creat(linklist head)
+//创建链表
+linklist creat(linklist head, int length)
 {
 	node *r, *s;
 	int a;
-	r = (linklist)malloc(sizeof(node));
+	r = (node*)malloc(sizeof(node));
 	head = r;
-	scanf("%d", &a);
-	while (a != 0)
+	while (length != 0)
 	{
-		s = (node*)malloc(sizeof(node));
-		s->data = a;
-		r->next = s;
-		r = s;
 		printf("please input a data:");
 		scanf("%d", &a);
+		s = (node*)malloc(sizeof(node));
+		r->next = s;
+		s->data = a;
+		r = s;
+		length--;
 	}
 	r->next = NULL;
 	return head;
 }
 
-int length(linklist l)
+//计算链表长度
+int length(linklist L)
 {
-	linklist p = l->next;
-	int i = 1;
+	linklist p = L->next;
+	int num = 1;
 	while (p)
 	{
-		i++;
+		num++;
 		p = p->next;
 	}
-	return i;
+	return num;
 }
 
+//合并两链表
 linklist mergel(linklist A, linklist B)
 {
 	int m, n;
-	node *p, *q, *s, *t;
-	linklist C;
-	p = A->next;
-	q = B->next;
+	node *p = 0;
+	node *q = 0;
+	node *s, *t;
+	linklist C = 0;
+
 	m = length(A);
 	n = length(B);
-	C = A;
+
+	if (m >= n)
+	{
+		q = B->next;
+		C = A;
+		p = C->next;
+	}
+	
 	if (m < n)
 	{
-		p = B->next;
 		q = A->next;
 		C = B;
+		p = C->next;
 	}
 
 	while (p && q)
 	{
 		s = p->next;
-		p->next = q;
-		if (s)
+		t = q->next;
+		if (q)
 		{
-			t = q->next;
+			p->next = q;
 			q->next = s;
 		}
 		p = s;
-		t = q->next;
 		q = t;
 	}
 	return C;
 }
 
+//升序排序
 linklist sort(linklist L)
 {
 	linklist p, q, min;
@@ -96,156 +107,65 @@ linklist sort(linklist L)
 	return L;
 }
 
-linklist Delete(linklist l, int index)
-{
-	linklist p, t;
-	int cx = 1;
-	p = l;
-	t = p;
-	if (index < length(l))
-	{
-		while (p && (cx<index))
-		{
-			t = p;
-			p = p->next;
-			cx++;
-		}
-		t->next = p->next;
-	}
-	else
-		printf("input indext error");
-	return l;
-}
-
-linklist Delete_element(linklist l, int data)
-{
-	linklist p;
-	p = l;
-	if (p->next)
-	{
-		while (p->next->data != data)
-		{
-			p = p->next;
-		}
-		p->next = p->next->next;
-	}
-	else
-		printf("don't faind the element");
-	return l;
-}
-
-linklist display(linklist l)
+//显示链表元素
+linklist display(linklist L)
 {
 	linklist p;
 	printf("new linklist:\n");
-	p = l->next;
+	p = L->next;
 	while (p)
 	{
-		printf("%d\n", p->data);
+		printf("%d  ", p->data);
 		p = p->next;
 	}
-	return l;
+	printf("\n");
+	return L;
 }
 
 int main()
 {
-	linklist p, q, A, B, C, D;
-	int indexs;
-	int datas;
-	char name;
-	int cmd;
+	linklist p, q;
+
+	int m, n;
+
+	linklist A = 0;
 	printf("Creat linklist A:\n");
-	printf("please input a data:");
-	A = 0;
-	A = creat(A);
+	printf("please input A_sum:");
+	scanf("%d", &m);
+	A = creat(A, m);
+
+	linklist B = 0;
 	printf("Creat linklist B:\n");
-	printf("please input a data:");
-	B = 0;
-	B = creat(B);
+	printf("please input B_sum:");
+	scanf("%d", &n);
+	B = creat(B, n);
+
+	linklist C = 0;
 	C = mergel(A, B);
 	printf("linklist C\n");
 	p = C->next;
 	while (p)
 	{
-		printf("%d\n", p->data);
+		printf("%d  ", p->data);
 		p = p->next;
 	}
+	printf("\n");
+
+	linklist D = 0;
 	D = C;
 	sort(D);
 	printf("linklist D:\n");
 	q = D->next;
-	while (p)
+	while (q)
 	{
-		printf("%d\n", q->data);
+		printf("%d  ", q->data);
 		q = q->next;
 	}
-	printf("\nplease input 0 or 1 \n");
-	scanf("%d", &cmd);
-	if (cmd == 0)
-	{
-		printf("please input linklist name \n");
-		fflush(stdin);
-		scanf("%c", &name);
-		printf("please input index \n");
-		scanf("%c", &indexs);
-		fflush(stdin);
-		if (name == 'A')
-		{
-			Delete(A, indexs);
-			display(A);
-		}
-		else if (name == 'B')
-		{
-			Delete(B, indexs);
-			display(B);
-		}
-		else if (name == 'C')
-		{
-			Delete(C, indexs);
-			display(C);
-		}
-		else if (name == 'D')
-		{
-			Delete(D, indexs);
-			display(D);
-		}
-		else
-			printf("nameError");
-	}
-	else if (cmd == 1)
-	{
-		fflush(stdin);
-		printf("please input linklist name\n");
-		scanf("%c", &name);
-		printf("\nplease input datas \n");
-		scanf("%c", &datas);
-		if (name == 'A')
-		{
-			Delete_element(A, datas);
-			display(A);
-		}
-		else if (name == 'B')
-		{
-			Delete_element(B, datas);
-			display(B);
-		}
-		else if (name == 'C')
-		{
-			Delete_element(C, datas);
-			display(C);
-		}
-		else if (name == 'D')
-		{
-			Delete_element(D, datas);
-			display(D);
-		}
-		else
-			printf("name2Error");
-	}
-	else
-		printf("cmdError");
+	printf("\n");
+
 	printf("\nOver\n");
 	getchar();
 
+	system("pause");
 	return 0;
 }
